@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pet_finder_app/config/routing/routes.dart';
+import 'package:pet_finder_app/features/splash/presentation/pages/onboarding_screen.dart';
+import 'package:pet_finder_app/features/splash/presentation/pages/splash_screen.dart';
 
 // import 'package:pet_finder_app/core/di/dependency_injection.dart';
 
@@ -71,7 +73,16 @@ final GoRouter router = GoRouter(
       pageBuilder: (context, state) => _buildPageWithSlideTransition(
         context: context,
         state: state,
-        child: const Scaffold(),
+        child: const SplashScreen(),
+        textDirection: TextDirection.rtl,
+      ),
+    ),
+    GoRoute(
+      path: Routes.onboardingScreen,
+      pageBuilder: (context, state) => _buildPageWithSlideTransition(
+        context: context,
+        state: state,
+        child: const OnboardingScreen(),
         textDirection: TextDirection.rtl,
       ),
     ),

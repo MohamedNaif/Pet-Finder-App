@@ -18,6 +18,7 @@ class Routes {
   static const String rewards = '/rewards';
   static const String rewardDetails = '/reward-details';
   static const String splash = '/splash';
+  static const String onboardingScreen = '/onboarding_screen';
   static const String profileInfo = '/profile/info';
   static const String notification = '/notification';
 
