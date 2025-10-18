@@ -1,5 +1,7 @@
 class AppAssets {
   static const String logo = 'assets/images/heart.png';
+  static const String petImage = 'assets/images/pet.png';
+  static const String petIcon = 'assets/images/pet_icon.svg';
   static const String logoImage = 'assets/images/laza.png';
   static const String homeIcon = 'assets/images/home_icon.svg';
   static const String ordersIcon = 'assets/images/orders_icon.svg';
