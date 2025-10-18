@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pet_finder_app/config/routing/routes.dart';
+import 'package:pet_finder_app/features/home/presentation/cubit/home_cubit.dart';
+import 'package:pet_finder_app/features/home/presentation/pages/home_screen.dart';
+import 'package:pet_finder_app/features/home/presentation/pages/pet_detail_screen.dart';
 import 'package:pet_finder_app/features/splash/presentation/pages/onboarding_screen.dart';
 import 'package:pet_finder_app/features/splash/presentation/pages/splash_screen.dart';
 
@@ -86,24 +89,7 @@ final GoRouter router = GoRouter(
         textDirection: TextDirection.rtl,
       ),
     ),
-    GoRoute(
-      path: Routes.login,
-      pageBuilder: (context, state) => _buildPageWithSlideTransition(
-        context: context,
-        state: state,
-        child: const Scaffold(),
-        textDirection: TextDirection.rtl,
-      ),
-    ),
-    GoRoute(
-      path: Routes.signup,
-      pageBuilder: (context, state) => _buildPageWithSlideTransition(
-        context: context,
-        state: state,
-        child: const Scaffold(),
-        textDirection: TextDirection.rtl,
-      ),
-    ),
+
     //!============ END OF Notification ROUTES ======================================
     //!============ Start OF Home ROUTES ====================================
     GoRoute(
@@ -111,10 +97,18 @@ final GoRouter router = GoRouter(
       pageBuilder: (context, state) => _buildPageWithSlideTransition(
         context: context,
         state: state,
-        child: const Scaffold(),
+        child: const HomeScreen(),
         textDirection: TextDirection.rtl,
       ),
     ),
-    
+    GoRoute(
+      path: Routes.petDetailScreen,
+      pageBuilder: (context, state) => _buildPageWithSlideTransition(
+        context: context,
+        state: state,
+        child: PetDetailScreen(pet: state.extra as Map<String, dynamic>),
+        textDirection: TextDirection.rtl,
+      ),
+    ),
   ],
 );
