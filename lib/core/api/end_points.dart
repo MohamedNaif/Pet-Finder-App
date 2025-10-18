@@ -1,5 +1,5 @@
 abstract class EndPoints {
-  static const String baseUrl = 'https://accessories-eshop.runasp.net';
+  static const String baseUrl = 'https://api.thecatapi.com';
   // static const String baseUrl =
   //     'http://199.247.5.250:1111/'; //! live server balsan
 
@@ -24,7 +24,8 @@ abstract class EndPoints {
 
   //! =======Products Endpoints========
   static const String products = '/api/products';
-  static const String categories = '/api/categories';
+  static const String categoriesV1 = '/v1/categories';
+  static const String breedsV1 = '/v1/breeds';
 }
 
 // add all changes without pagination

@@ -67,7 +67,7 @@ class CustomTextFormField extends StatefulWidget {
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   // Added onChanged
-  final TextAlign textAlign = TextAlign.right;
+  final TextAlign textAlign = TextAlign.left;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       // height: 70,
       // width: widget.width ?? MediaQuery.sizeOf(context).width * 0.9,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           if (widget.headerText != null) ...[
             Text(
@@ -91,8 +91,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             inputFormatters: widget.inputFormatters,
             obscuringCharacter: '*',
             textInputAction: widget.textInputAction,
-            cursorColor: AppColors.primary1,
-            textDirection: TextDirection.rtl,
+            cursorColor: Color(0xFF4DB6AC),
+            textDirection: TextDirection.ltr,
             style: widget.style ?? AppTextStyles.medium16,
             autovalidateMode: AutovalidateMode.onUserInteraction,
 
@@ -155,7 +155,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.0),
                     borderSide: const BorderSide(
-                      color: AppColors.primary1, // Color when focused
+                      color: Color(0xFF4DB6AC), // Color when focused
                       width: 1.5, // Border width
                     ),
                   ),
